@@ -1,38 +1,32 @@
-# parcel-plugin-interpolate-html
+# parcel-plugin-zengine-html-migrator
 
-Parcel plugin that interpolates ENV in HTML files
+Parcel plugin that interpolates v1 plugin HTML into v2 HTML body
 
 ## Installation
 
-`yarn add --dev parcel-plugin-interpolate-html`  
-or  
-`npm i -d parcel-plugin-interpolate-html`
+`npm i -d parcel-plugin-zengine-html-migrator`
 
 _Attention: parcel-bundler has to be installed_
 
 ## Usage
-
-There is no need to enable the plugin in any configuration file. If you want to use it you can do so after installing.  
-You have to escape the ENV with %% around it e.g. `%example%`.
+ 
+Add `%PLUGIN_HTML%` to the wrapper's index.html between the body tags.
 
 ### Example
 
 _**index.html**_
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>%title%</title>
+    <title>Cool Plugin</title>
   </head>
+  <body>
+    %PLUGIN_HTML%
+  </body>
 </html>
-```
-
-_**.env**_
-
-```
-title=Example
 ```
 
 _**run it**_  
@@ -40,12 +34,17 @@ _**run it**_
 
 _**output**_
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Example</title>
+    <title>Cool Plugin</title>
   </head>
+  <body>
+    <script type="text/ng-template" id="my-cool-plugin">
+      <!-- etc -->
+    </script>
+  </body>
 </html>
 ```
