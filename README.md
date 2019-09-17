@@ -15,7 +15,7 @@ _Attention: parcel-bundler has to be installed_
 ## Usage
  
 1. Add `%PLUGIN_HTML%` to the wrapper's index.html between the body tags.
-2. Ensure your ng-templates all live in `plugin/plugin.html`
+2. Ensure your ng-templates all live in `v1-output/plugin.html`
 3. Run parcel normally
 
 ### Example
